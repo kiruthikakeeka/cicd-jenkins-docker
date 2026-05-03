@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: myapp
+    ports:
+      - "5000:5000"
+    environment:
+      - ENV=staging
+    restart: always
+
+  sonarqube:
+    image: sonarqube:community
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
+    restart: always
